@@ -1,4 +1,4 @@
-package com.test.sixpro;
+package com.test.sixpro.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.test.sixpro.R;
 
 /**
  * Created by Administrator on 2019/2/18.

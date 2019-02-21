@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
+import com.test.sixpro.utils.HomeButtomData;
+
 public class MainActivity extends AppCompatActivity {
 
     private FrameLayout home_container;
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mFragments = getFragments("BottomNavigationView Tab");
+        mFragments = HomeButtomData.getFragments("BottomNavigationView");
 
         home_container = (FrameLayout) findViewById(R.id.home_container);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -55,14 +57,4 @@ public class MainActivity extends AppCompatActivity {
         onTabItemSelected(R.id.navigation_home);
     }
 
-    public static Fragment[] getFragments(String from) {
-
-        Fragment fragments[] = new Fragment[3];
-
-        fragments[0] = HomeFragment.newInstance(from);
-        fragments[1] = DiscoveryFragment.newInstance(from);
-        fragments[2] = AttentionFragment.newInstance(from);
-
-        return fragments;
-    }
 }
