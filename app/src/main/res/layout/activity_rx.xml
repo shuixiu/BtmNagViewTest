@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.test.sixpro.MainActivity">
+
+
+   <Button
+       android:id="@+id/bt_get"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="get"/>
+
+    <Button
+        android:id="@+id/bt_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="post"
+        app:layout_constraintLeft_toRightOf="@+id/bt_get"/>
+
+</android.support.constraint.ConstraintLayout>

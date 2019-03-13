@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MsgView">
+        <attr format="color" name="mv_backgroundColor"/>
+        <attr format="dimension" name="mv_cornerRadius"/>
+        <attr format="dimension" name="mv_strokeWidth"/>
+        <attr format="color" name="mv_strokeColor"/>
+        <attr format="boolean" name="mv_isRadiusHalfHeight"/>
+        <attr format="boolean" name="mv_isWidthHeightEqual"/>
+    </declare-styleable>
+</resources>

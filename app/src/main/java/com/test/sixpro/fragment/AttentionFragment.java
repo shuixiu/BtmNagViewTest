@@ -10,15 +10,15 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.test.sixpro.R;
+import com.test.sixpro.base.BaseFragment;
 
 /**
  * Created by Administrator on 2019/2/18.
  */
 
-public class AttentionFragment extends Fragment {
+public class AttentionFragment extends BaseFragment {
 
 
-    private View v;
     private TextView fragment;
     private String mFrom;
     private static AttentionFragment at = null;
@@ -41,18 +41,22 @@ public class AttentionFragment extends Fragment {
             Log.d("wwn", mFrom + "--------");
         }
     }
-
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        if (v == null) {
-            v = inflater.inflate(R.layout.fragment, null);
-            fragment = v.findViewById(R.id.fragment);
-            fragment.setText("AttentionFragment");
-            Log.d("wwn", "AttentionFragment");
+    protected View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment, null);
 
-            // init view  init data
-        }
-        return v;
+        fragment = view.findViewById(R.id.fragment);
+
+        fragment.setText("AttentionFragment");
+
+
+        Log.d("wwn", "AttentionFragment1111111");
+        return view;
+    }
+
+    @Override
+    protected void initData() {
+
+        Log.d("wwn", "AttentionFragment2222222");
     }
 }
