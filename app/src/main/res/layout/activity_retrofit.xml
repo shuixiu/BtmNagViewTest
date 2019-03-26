@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="25dp">
+
+    <include
+        android:id="@+id/in_title"
+        layout="@layout/activity_all_title" />
+
+    <TextView
+        android:id="@+id/tv_retrofit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/default_gray9"
+        android:padding="@dimen/x12"
+        android:text="retrofit"
+        android:textColor="@color/black"
+        android:textSize="@dimen/x14"
+        app:layout_constraintTop_toBottomOf="@+id/in_title" />
+
+    <Button
+        android:id="@+id/bt_get"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="GET"
+        android:textColor="@color/black"
+        android:textSize="@dimen/x14"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/bt_post"
+        app:layout_constraintTop_toBottomOf="@+id/tv_retrofit" />
+
+    <Button
+        android:id="@+id/bt_post"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="POST"
+        android:textColor="@color/black"
+        android:textSize="@dimen/x14"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/bt_get"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_retrofit" />
+
+    <Button
+        android:id="@+id/bt_file"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="FILE"
+        android:textColor="@color/black"
+        android:textSize="@dimen/x14"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/bt_down"
+        app:layout_constraintTop_toBottomOf="@+id/bt_get" />
+
+    <Button
+        android:id="@+id/bt_down"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="DOWN"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/bt_file"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_post" />
+
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/default_gray9"
+        android:padding="@dimen/x12"
+        android:textColor="@color/black"
+        android:textSize="@dimen/x14"
+        app:layout_editor_absoluteX="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/bt_file"/>
+
+
+</android.support.constraint.ConstraintLayout>

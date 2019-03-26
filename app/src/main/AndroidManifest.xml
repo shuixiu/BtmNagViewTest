@@ -1,8 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.test.sixpro">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+
+
+
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions"/>
+    <uses-permission android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"
+        tools:ignore="MockLocation,ProtectedPermissions"/>
+
+    //获取设备网络状态，禁用后无法获取网络状态
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    //网络权限，当禁用后，无法进行检索等相关业务
+    <uses-permission android:name="android.permission.INTERNET" />
+    //读取设备硬件信息，统计数据
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    //读取系统信息，包含系统版本等信息，用作统计
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    //获取设备的网络状态，鉴权所需网络代理
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    //允许sd卡写权限，需写入地图数据，禁用后无法显示地图
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    //这个权限用于进行网络定位
+    <!--<uses-permission android:name="android.permission.WRITE_SETTINGS" />-->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions"/>
+    //这个权限用于访问GPS定位
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    //获取统计数据
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    //使用步行AR导航，配置Camera权限
+    <uses-permission android:name="android.permission.CAMERA" />
+    //程序在手机屏幕关闭后后台进程仍然运行
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
+
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <application
+        android:name=".MainApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -10,8 +57,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".TabMainActivity"
-            android:label="@string/app_name">
+            android:name=".ui.TabMainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -20,8 +69,32 @@
         </activity>
 
         <activity
-            android:name=".fragment.home.RxRetrofitActivity"
+            android:name=".ui.home.LocationChangeActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.attion.CallMsMActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity android:name=".ui.discovery.RetrofitMActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"/>
+
+
+
+        <service android:name="com.test.sixpro.service.MockGpsService"/>
+        <receiver android:name="com.test.sixpro.ui.home.LocationChangeActivity$MockServiceReceiver" />
+
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="KinZnjgjwPhsgEkZ4UvM3QaeNhEUekOm" />
+        <service android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote"/>
+
+        <receiver android:name=".receiver.SMSReceiver"/>
 
     </application>
 

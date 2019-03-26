@@ -5,20 +5,28 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.test.sixpro.MainActivity">
+    tools:context="com.test.sixpro.ui.MainActivity">
 
 
    <Button
        android:id="@+id/bt_get"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:text="get"/>
+       android:text="post"/>
 
     <Button
         android:id="@+id/bt_post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="post"
+        android:text=""
+        android:visibility="gone"
         app:layout_constraintLeft_toRightOf="@+id/bt_get"/>
+
+    <TextView
+        android:id="@+id/tv_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        app:layout_constraintTop_toBottomOf="@+id/bt_get"/>
 
 </android.support.constraint.ConstraintLayout>

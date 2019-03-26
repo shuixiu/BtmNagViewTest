@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="25dp">
+
+    <include
+        android:id="@+id/in_title"
+        layout="@layout/activity_all_title" />
+
+    <TextView
+        android:id="@+id/tv_call_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/default_gray9"
+        android:padding="@dimen/x12"
+        android:text="打电话"
+        android:textColor="@color/black"
+        android:textSize="@dimen/x14"
+        app:layout_constraintTop_toBottomOf="@+id/in_title" />
+
+    <Button
+        android:id="@+id/bt_laogong"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="老公"
+        android:textColor="@color/black"
+        android:textSize="@dimen/x14"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/bt_laodi"
+        app:layout_constraintTop_toBottomOf="@+id/tv_call_phone" />
+
+    <Button
+        android:id="@+id/bt_laodi"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="老弟"
+        android:textColor="@color/black"
+        android:textSize="@dimen/x14"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/bt_laogong"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_call_phone" />
+
+    <Button
+        android:id="@+id/bt_mama"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="妈妈"
+        android:textColor="@color/black"
+        android:textSize="@dimen/x14"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/bt_baba"
+        app:layout_constraintTop_toBottomOf="@+id/bt_laogong" />
+
+    <Button
+        android:id="@+id/bt_baba"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="爸爸"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/bt_mama"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_laodi" />
+
+
+
+    <TextView
+        android:id="@+id/tv_send_msm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/default_gray9"
+        android:padding="@dimen/x12"
+        android:text="发短信"
+        android:textColor="@color/black"
+        android:textSize="@dimen/x14"
+        app:layout_constraintTop_toBottomOf="@+id/bt_mama" />
+
+    <Button
+        android:id="@+id/bt_msm_laogong"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="老公"
+        android:textColor="@color/black"
+        android:textSize="@dimen/x14"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/bt_msm_laodi"
+        app:layout_constraintTop_toBottomOf="@+id/tv_send_msm" />
+
+    <Button
+        android:id="@+id/bt_msm_laodi"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="老弟"
+        android:textColor="@color/black"
+        android:textSize="@dimen/x14"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/bt_msm_laogong"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_send_msm" />
+
+    <Button
+        android:id="@+id/bt_msm_mama"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="爸爸"
+        android:textColor="@color/black"
+        android:textSize="@dimen/x14"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/bt_msm_baba"
+        app:layout_constraintTop_toBottomOf="@+id/bt_msm_laogong" />
+
+    <Button
+        android:id="@+id/bt_msm_baba"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="妈妈"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/bt_msm_mama"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_msm_laodi" />
+
+
+
+
+</android.support.constraint.ConstraintLayout>

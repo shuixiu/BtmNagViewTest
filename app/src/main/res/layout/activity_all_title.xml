@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="@dimen/x44"
+        android:background="@color/colorPrimary">
+
+        <LinearLayout
+            android:id="@+id/ll_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:visibility="gone"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/x12"
+            android:paddingRight="@dimen/x12">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/ic_arrow_back_black_24dp" />
+
+            <TextView
+                android:id="@+id/title_back_text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:textColor="@color/white"
+                android:textSize="@dimen/x18" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/title_font"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/x18" />
+
+        <LinearLayout
+            android:id="@+id/ll_out"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/x5"
+            android:visibility="gone"
+            android:paddingRight="@dimen/x12">
+
+            <TextView
+                android:id="@+id/tv_right_custmer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text=""
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -33,7 +33,7 @@
             tl:tl_iconWidth="23dp"
             tl:tl_indicator_color="@android:color/black"
             tl:tl_indicator_height="0dp"
-            tl:tl_textSelectColor="@android:color/darker_gray"
+            tl:tl_textSelectColor="@color/colorPrimary"
             tl:tl_textUnselectColor="@android:color/black"
             tl:tl_textsize="12sp"
             tl:tl_underline_color="#DDDDDD"

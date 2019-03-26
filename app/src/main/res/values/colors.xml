@@ -3,4 +3,31 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+
+    <color name="white">#ffffff</color> <!-- 白色 -->
+    <color name="background">#faf9f9</color>
+    <color name="background_line">#ebebeb</color>
+    <color name="background_home">#80faf9f9</color>
+    <color name="background_search">#F5F5F5</color>
+    <color name="background_search_bule">#88FFFFFF</color>
+    <color name="background_pro">#D8D7D7</color>
+    <color name="background_new">#faf9f9</color>
+    <color name="defalut_black">#333333</color>
+    <color name="home_top_text">#4d4d4d</color>
+    <color name="home_buttom_text">#808080</color>
+    <color name="editext_border">#dddddd</color>
+    <color name="defalut_red">#ff3c3c</color>
+    <color name="translate">#00000000</color>
+    <color name="translate_gray">#8A000000</color>
+
+    <color name="default_orange">#ffb423</color>
+    <color name="default_gray">#666666</color>
+    <color name="gray">#cccccc</color>
+    <color name="default_gray9">#999999</color>
+    <color name="default_bule">#00b368</color>
+    <color name="default_bule_phone">#0000FF</color>
+    <color name="default_vip">#ff9c00</color>
+
+    <color name="half_transparent">#80000000</color>
 </resources>

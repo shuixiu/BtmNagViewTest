@@ -1,6 +1,11 @@
 <resources>
-    <string name="app_name">SixPro</string>
+    <string name="app_name">冲鸭</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Discovery</string>
     <string name="title_notifications">Attention</string>
+
+
+    <!--DA:E2:A5:3E:C4:B7:FC:16:34:46:6D:97:6C:51:CB:43:4D:A9:15:27;com.test.sixpro-->
+    <!--65:46:C0:BF:59:40:79:CB:AA:A7:48:4B:0B:F1:E4:EC:B8:2C:87:FE;com.test.sixpro-->
+    <string name="safecode">65:46:C0:BF:59:40:79:CB:AA:A7:48:4B:0B:F1:E4:EC:B8:2C:87:FE;com.test.sixpro</string>
 </resources>

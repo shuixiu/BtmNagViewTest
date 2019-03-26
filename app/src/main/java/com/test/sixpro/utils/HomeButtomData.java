@@ -13,7 +13,6 @@ import com.test.sixpro.fragment.DiscoveryFragment;
 import com.test.sixpro.fragment.HomeFragment;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Administrator on 2019/2/20.
@@ -21,12 +20,12 @@ import java.util.List;
 
 public class HomeButtomData {
 
-    public static final int[] mTabRes = new int[]{R.drawable.ic_home_black_24dp,
-            R.drawable.ic_dashboard_black_24dp, R.drawable.ic_notifications_black_24dp,};
-    public static final int[] mTabResPressed =
-            new int[]{R.drawable.ic_home_black_24dp, R.drawable.ic_dashboard_black_24dp,
-                    R.drawable.ic_notifications_black_24dp};
-    public static final String[] mTabTitle = new String[]{"Home", "Discovery", "Attention"};
+    public static final int[] mTabResPressed  = new int[]{R.drawable.ic_home_black_24dp,
+            R.drawable.ic_dsicoveryblack_24dp, R.drawable.ic_notifications_black_24dp,};
+    public static final int[] mTabRes=
+            new int[]{R.drawable.ic_home_blue_24dp, R.drawable.ic_dsicoveryblue_24dp,
+                    R.drawable.ic_notifications_blue_24dp};
+    public static final String[] mTabTitle = new String[]{"首页", "发现", "设置"};
 
     public static Fragment[] getFragments(String from) {
         Fragment fragments[] = new Fragment[3];
