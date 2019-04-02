@@ -130,6 +130,7 @@ public class LocationChangeActivity extends BaseActivity implements View.OnClick
 //        116.29794250579144&40.05140172874632
     }
 
+
     @OnClick(R.id.bt_change_location)
     void changeLocation() {
 

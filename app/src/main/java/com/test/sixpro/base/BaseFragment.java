@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.test.sixpro.utils.LogInfo;
+
 import butterknife.ButterKnife;
 
 public abstract class BaseFragment extends Fragment {
@@ -91,6 +93,19 @@ public abstract class BaseFragment extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         this.context = context;
+
+        LogInfo.log("wwn","onAttach");
     }
 
+    @Override
+    public void onDetach() {
+        super.onDetach();
+
+        LogInfo.log("wwn","onDetach");
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
 }

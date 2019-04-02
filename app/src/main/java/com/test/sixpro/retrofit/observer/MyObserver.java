@@ -1,6 +1,7 @@
 package com.test.sixpro.retrofit.observer;
 
 import android.app.Activity;
+import android.content.Context;
 
 import com.google.gson.Gson;
 import com.test.sixpro.retrofit.impl.OnRetrofit;
@@ -73,11 +74,10 @@ public class MyObserver {
     }
 
 
-    public <T> Observer<? super ResponseBody> getObserver(final Activity activity, final Class<T> tClass, final OnRetrofit.OnQueryMapListener<T> listener) {
+    public <T> Observer<? super ResponseBody> getObserver(final Class<T> tClass, final OnRetrofit.OnQueryMapListener<T> listener) {
         return new Observer<ResponseBody>() {
             @Override
             public void onSubscribe(Disposable d) {
-                WDialogUtil.create().show(activity);
                 addDisposable(d);
             }
 
@@ -99,7 +99,6 @@ public class MyObserver {
 
             @Override
             public void onComplete() {
-                WDialogUtil.create().hide();
             }
         };
     }

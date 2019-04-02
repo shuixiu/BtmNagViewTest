@@ -12,6 +12,8 @@ import android.widget.TextView;
 import com.test.sixpro.R;
 import com.test.sixpro.base.BaseFragment;
 import com.test.sixpro.ui.attion.CallMsMActivity;
+import com.test.sixpro.ui.attion.universal.FuctionManager;
+import com.test.sixpro.ui.attion.universal.FunctionNoParamNoResult;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -44,7 +46,44 @@ public class AttentionFragment extends BaseFragment {
             mFrom = getArguments().getString("from");
             Log.d("wwn", mFrom + "--------");
         }
+
+
+
     }
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        FuctionManager.getInstance().addFunction(new FunctionNoParamNoResult("111111") {
+            @Override
+            public void function() {
+                Log.d("wwn", "FuctionManager-----111111");
+            }
+        });
+
+        FuctionManager.getInstance().addFunction(new FunctionNoParamNoResult("222222") {
+            @Override
+            public void function() {
+                Log.d("wwn", "FuctionManager-----222222");
+            }
+        });
+        FuctionManager.getInstance().addFunction(new FunctionNoParamNoResult("333333") {
+            @Override
+            public void function() {
+                Log.d("wwn", "FuctionManager-----333333");
+            }
+        });
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+
+    }
+
     @Override
     protected View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -63,7 +102,11 @@ public class AttentionFragment extends BaseFragment {
 
     @OnClick(R.id.bt_call_msm)
     void callMsM(View view){
+
+
+
         startActivity(new Intent(context,CallMsMActivity.class));
+
     }
 
 

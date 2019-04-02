@@ -42,7 +42,7 @@ public class WRetrofit {
 
 
     public WRetrofit build(String BaseUrl) {
-        WDialogUtil.create().setShow(true); // 默认显示Dialog
+//        WDialogUtil.create().setShow(true); // 默认显示Dialog
         apiService = HttpManager.create().build(BaseUrl).getService(ApiService.class);
         return this;
     }
@@ -68,7 +68,6 @@ public class WRetrofit {
     }
 
     /**
-     * @param activity
      * @param tClass
      * @param Url      当map  中没有参数的时候 需要上传url 如http://apis.juhe.cn/
      *                 反之 http://apis.juhe.cn/mobile/get?phone=18856907654&key=5778e9d9cf089fc3b093b162036fc0e1
@@ -76,7 +75,7 @@ public class WRetrofit {
      * @Description
      * @Return void
      */
-    public <T> void doGet(Activity activity, final Class<T> tClass, String Url, final OnRetrofit.OnQueryMapListener<T> listener) {
+    public <T> void doGet(final Class<T> tClass, String Url, final OnRetrofit.OnQueryMapListener<T> listener) {
         HashMap<String, String> map = new HashMap<>();
         listener.onMap(map);
         if (map.size() > 0) {
@@ -90,19 +89,18 @@ public class WRetrofit {
                 .subscribeOn(Schedulers.io())//在子线程取数据
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())//在主线程显示ui
-                .subscribe(MyObserver.create().getObserver(activity, tClass, listener));
+                .subscribe(MyObserver.create().getObserver( tClass, listener));
     }
 
 
     /**
-     * @param activity
      * @param tClass
      * @param UrlPath  如 bother/call/can
      * @param listener
      * @Description
      * @Return void
      */
-    public <T> void doPost(Activity activity, final Class<T> tClass, String UrlPath, final OnRetrofit.OnQueryMapListener<T> listener) {
+    public <T> void doPost(final Class<T> tClass, String UrlPath, final OnRetrofit.OnQueryMapListener<T> listener) {
         HashMap<String, String> map = new HashMap<>();
         listener.onMap(map);
         apiService
@@ -110,7 +108,7 @@ public class WRetrofit {
                 .subscribeOn(Schedulers.io())//在子线程取数据
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())//在主线程显示ui
-                .subscribe(MyObserver.create().getObserver(activity, tClass, listener));
+                .subscribe(MyObserver.create().getObserver(tClass, listener));
     }
 
     public void cancleAll(){

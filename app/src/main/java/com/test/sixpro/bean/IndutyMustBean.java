@@ -1,4 +1,4 @@
-package com.test.sixpro.modle;
+package com.test.sixpro.bean;
 
 import java.io.Serializable;
 import java.util.List;
@@ -24,6 +24,13 @@ public class IndutyMustBean implements Serializable {
 
         public void setList(IndutyList list) {
             this.list = list;
+        }
+
+        @Override
+        public String toString() {
+            return "IndutyPage{" +
+                    "list=" + list +
+                    '}';
         }
     }
     public class IndutyList implements Serializable{
@@ -72,6 +79,17 @@ public class IndutyMustBean implements Serializable {
         public void setData(List<IndutyData> data) {
             this.data = data;
         }
+
+        @Override
+        public String toString() {
+            return "IndutyList{" +
+                    "current_page=" + current_page +
+                    ", last_page=" + last_page +
+                    ", per_page=" + per_page +
+                    ", total=" + total +
+                    ", data=" + data +
+                    '}';
+        }
     }
     public class IndutyData implements Serializable{
         private String id;
@@ -101,6 +119,15 @@ public class IndutyMustBean implements Serializable {
         public void setName(String name) {
             this.name = name;
         }
+
+        @Override
+        public String toString() {
+            return "IndutyData{" +
+                    "id='" + id + '\'' +
+                    ", img='" + img + '\'' +
+                    ", name='" + name + '\'' +
+                    '}';
+        }
     }
 
 
@@ -126,5 +153,14 @@ public class IndutyMustBean implements Serializable {
 
     public void setData(IndutyPage data) {
         this.data = data;
+    }
+
+    @Override
+    public String toString() {
+        return "IndutyMustBean{" +
+                "return_code='" + return_code + '\'' +
+                ", return_msg='" + return_msg + '\'' +
+                ", data=" + data +
+                '}';
     }
 }

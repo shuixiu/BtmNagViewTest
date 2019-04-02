@@ -1,4 +1,4 @@
-package com.test.sixpro.modle;
+package com.test.sixpro.bean;
 
 import com.flyco.tablayout.listener.CustomTabEntity;
 

@@ -15,7 +15,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,10 +24,8 @@ import com.test.sixpro.R;
 import com.test.sixpro.dailog.LoadingDialog;
 
 import butterknife.ButterKnife;
-import io.reactivex.disposables.CompositeDisposable;
-import io.reactivex.disposables.Disposable;
 
-public class BaseActivity extends AppCompatActivity {
+public  class BaseActivity extends AppCompatActivity {
 
 
     @SuppressWarnings("unchecked")
@@ -40,7 +37,10 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initSystemBarTint();
+
+
     }
+
 
     public View titleView;
     public ImageView iv_back;
@@ -200,4 +200,7 @@ public class BaseActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
 }

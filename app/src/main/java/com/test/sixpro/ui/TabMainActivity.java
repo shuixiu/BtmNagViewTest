@@ -2,29 +2,25 @@ package com.test.sixpro.ui;
 
 import android.Manifest;
 import android.annotation.TargetApi;
-import android.content.Context;
 import android.content.pm.PackageManager;
-import android.location.Criteria;
-import android.location.Location;
-import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.test.sixpro.R;
 import com.test.sixpro.base.BaseActivity;
-import com.test.sixpro.modle.LatLng;
-import com.test.sixpro.modle.TabEntity;
+import com.test.sixpro.bean.TabEntity;
+import com.test.sixpro.utils.ActivityTracker;
 import com.test.sixpro.utils.HomeButtomData;
 import com.test.sixpro.utils.LogInfo;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +35,7 @@ public class TabMainActivity extends BaseActivity {
     private CommonTabLayout mTabLayout;
     private ArrayList<Fragment> mFragmensts;
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +58,7 @@ public class TabMainActivity extends BaseActivity {
             public void onTabSelect(int position) {
 
             }
+
             @Override
             public void onTabReselect(int position) {
             }
@@ -133,12 +131,29 @@ public class TabMainActivity extends BaseActivity {
         for (Fragment fragment : fragments) {
             if (fragment != null) {
                 // 这里就会调用我们Fragment中的onRequestPermissionsResult方法
-                LogInfo.log("wwn","activity+onRequestPermissionsResult");
+                LogInfo.log("wwn", "activity+onRequestPermissionsResult");
                 fragment.onRequestPermissionsResult(requestCode, permissions, grantResults);
             }
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+        ActivityTracker.getAT().AppExit(this);
 
+        LogInfo.log("wwn","killonBackPressed");
+//            moveTaskToBack(false);
+    }
+
+    /*  @Override
+    public void onBackPressed() {
+        finish();
+        ActivityTracker.getAT().AppExit(this);
+//            moveTaskToBack(false);
+
+        LogInfo.log("wwn","kill");
+    }*/
 }
 

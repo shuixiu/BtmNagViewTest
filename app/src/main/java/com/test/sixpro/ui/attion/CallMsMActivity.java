@@ -10,11 +10,15 @@ import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import com.test.sixpro.R;
 import com.test.sixpro.base.BaseActivity;
+import com.test.sixpro.ui.attion.universal.FuctionManager;
+import com.test.sixpro.ui.attion.universal.FunctionNoParamNoResult;
 import com.test.sixpro.utils.LogInfo;
 import com.test.sixpro.utils.SMSMethod;
 
@@ -32,34 +36,43 @@ public class CallMsMActivity extends BaseActivity {
         ButterKnife.bind(this);
 
 
+
+
         initTitleView();
         title_font.setText("通讯");
-//        ll_back.setVisibility(View.VISIBLE);
-//        ll_back.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                finish();
-//            }
-//        });
+        ll_back.setVisibility(View.VISIBLE);
+        ll_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     @OnClick(R.id.bt_msm_laogong)
     void msmLaogong(View view) {
+        FuctionManager.getInstance().invokeFunction("111111");
 
-        SMSMethod.getInstance(CallMsMActivity.this).SendMessage("13263201160", "老公看到短信回个电话");
+
+//        SMSMethod.getInstance(CallMsMActivity.this).SendMessage("13263201160", "老公看到短信回个电话");
     }
     @OnClick(R.id.bt_msm_laodi)
     void msmLaodi(View view) {
-        SMSMethod.getInstance(CallMsMActivity.this).SendMessage("15933151095", "老弟看到短信回个电话");
+        FuctionManager.getInstance().removeFunction("111111");
+//        SMSMethod.getInstance(CallMsMActivity.this).SendMessage("15933151095", "老弟看到短信回个电话");
     }
     @OnClick(R.id.bt_msm_mama)
     void msmLaoma(View view) {
-        SMSMethod.getInstance(CallMsMActivity.this).SendMessage("13483485449", "老妈看到短信回个电话");
+        FuctionManager.getInstance().invokeFunction("222222");
+//        SMSMethod.getInstance(CallMsMActivity.this).SendMessage("13483485449", "老妈看到短信回个电话");
     }
 
     @OnClick(R.id.bt_msm_baba)
     void msmLaoba(View view) {
-        SMSMethod.getInstance(CallMsMActivity.this).SendMessage("13223175260", "老爸看到短信回个电话");
+
+        FuctionManager.getInstance().removeAllNoParamNoResultFunction();
+
+//        SMSMethod.getInstance(CallMsMActivity.this).SendMessage("13223175260", "老爸看到短信回个电话");
     }
 
     @OnClick(R.id.bt_laogong)
@@ -78,7 +91,11 @@ public class CallMsMActivity extends BaseActivity {
     }
     @OnClick(R.id.bt_baba)
     void callBaba(View vew) {
-        callPhone("13223175260");
+//        callPhone("13223175260");
+
+        startActivity(new Intent(CallMsMActivity.this,KotlineDemo.class));
+
+
     }
 
     public void callPhone(String phoneNum) {
